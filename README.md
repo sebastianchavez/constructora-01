@@ -107,11 +107,13 @@ Toda la información es de ejemplo. Reemplázala en los archivos HTML correspond
 ### Información general de la empresa
 
 - **Nombre:** `Constructora ArgaMax` (buscar y reemplazar)
-- **Dirección:** `Av. Principal 123, San Isidro, Lima - Perú`
-- **Teléfonos:** `+51 999 888 777` / `+51 (01) 234-5678`
-- **Emails:** `contacto@argamax.com`, `ventas@argamax.com`, `proyectos@argamax.com`, `privacidad@argamax.com`, `legal@argamax.com`
+- **Dirección:** `Av. Providencia 1234, Providencia, Santiago - Chile`
+- **Teléfonos:** `+56 9 1234 5678` / `+56 2 2345 6789`
+- **Emails:** `contacto@argamax.cl`, `ventas@argamax.cl`, `proyectos@argamax.cl`, `privacidad@argamax.cl`, `legal@argamax.cl`
 - **Horarios:** Lun-Vie 8:00-18:00 / Sáb 9:00-13:00 / Dom Cerrado
 - **Fundación:** `2009`
+- **Moneda:** pesos chilenos (CLP), con punto como separador de miles y sin decimales. Los valores publicados son referenciales, no una conversión de moneda.
+- **Datos de Chile:** direcciones, teléfonos y dominios son ejemplos y deben reemplazarse antes de publicar. El mapa muestra el sector de Providencia, Santiago.
 
 ### Imágenes
 

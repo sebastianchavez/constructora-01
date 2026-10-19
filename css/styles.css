@@ -22,12 +22,18 @@
 /* ---------- Base ---------- */
 * { scroll-behavior: smooth; }
 
+html { overflow-x: hidden; overflow-x: clip; }
+
 body {
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     color: var(--color-dark);
     line-height: 1.7;
-    overflow-x: hidden;
+    overflow-x: clip;
 }
+
+.row > *, .service-card.d-flex > div { min-width: 0; }
+img { max-width: 100%; }
+.contact-info-card p, .footer li, .legal-content { overflow-wrap: anywhere; }
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
@@ -153,6 +159,7 @@ a { transition: var(--transition); }
     align-items: center;
     color: #fff;
     overflow: hidden;
+    padding: 8rem 0 4rem;
 }
 .hero-section::before {
     content: '';
@@ -551,12 +558,14 @@ a { transition: var(--transition); }
 }
 .pricing-card h4 { margin-bottom: 1rem; }
 .pricing-card .price {
-    font-size: 3rem;
+    font-size: clamp(1.75rem, 2.7vw, 2.25rem);
     font-weight: 800;
     color: var(--color-primary);
     line-height: 1;
 }
 .pricing-card .price small {
+    display: block;
+    margin-top: .75rem;
     font-size: 1rem;
     color: var(--color-gray);
     font-weight: 400;
@@ -619,7 +628,7 @@ a { transition: var(--transition); }
 .contact-info-card {
     background: #fff;
     border-radius: 16px;
-    padding: 2rem;
+    padding: 2rem 1rem;
     box-shadow: var(--shadow-sm);
     height: 100%;
     transition: var(--transition);
@@ -1027,4 +1036,36 @@ a { transition: var(--transition); }
     .legal-content, .contact-form { padding: 2rem 1.5rem; }
     .pricing-card.featured { transform: scale(1); }
     .pricing-card.featured:hover { transform: translateY(-10px); }
+}
+
+@media (max-width: 991.98px) {
+    /* Los desplazamientos laterales no deben ensanchar la página móvil. */
+    .reveal-left, .reveal-right { transform: translateY(24px); }
+    .reveal-left.visible, .reveal-right.visible { transform: none; }
+    .pricing-card.featured { transform: none; }
+    .pricing-card.featured:hover { transform: translateY(-10px); }
+    .navbar-collapse { max-height: calc(100dvh - 80px); overflow-y: auto; }
+    .navbar-nav { padding: 1rem 0; gap: .25rem; }
+}
+
+@media (max-width: 575.98px) {
+    .container { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .section-title { margin-bottom: 2.5rem; }
+    .section-title .sub { letter-spacing: 2px; }
+    .service-card, .pricing-card, .contact-info-card, .testimonial-card, .cert-card { padding: 2rem 1.25rem; }
+    .service-card.d-flex { flex-direction: column; }
+    .hero-section .d-flex { justify-content: center; }
+    .hero-section .btn { width: 100%; }
+    .hero-section .hero-img { transform: none; }
+    .toast-container-custom { left: 1rem; right: 1rem; }
+    .toast-custom { min-width: 0; width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * { scroll-behavior: auto; }
+    .reveal, .reveal-left, .reveal-right, .reveal-scale {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
 }

@@ -97,9 +97,9 @@
             const step = (now) => {
                 const progress = Math.min((now - start) / duration, 1);
                 const eased = 1 - Math.pow(1 - progress, 3);
-                el.textContent = Math.floor(target * eased).toLocaleString('es-PE');
+                el.textContent = Math.floor(target * eased).toLocaleString('es-CL');
                 if (progress < 1) requestAnimationFrame(step);
-                else el.textContent = target.toLocaleString('es-PE');
+                else el.textContent = target.toLocaleString('es-CL');
             };
             requestAnimationFrame(step);
         }
